@@ -72,6 +72,6 @@ names(sel_data) <- sub("Mag", "Magnitude", names(sel_data))
 ##average of each variable for each activity and each subject.
 
 avg_data <- aggregate(. ~subject + activityData, sel_data, mean)
-avg_data <- avg_data[order(avg_data$subject,avg_data$activity),]
+avg_data <- avg_data[order(avg_data$subject,avg_data$activityData),]
 write.table(avg_data, file = "tidydata.txt",row.name=FALSE)
 
